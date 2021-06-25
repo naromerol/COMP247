@@ -14,10 +14,10 @@ mnist.keys()
 X, y = mnist["data"].to_numpy(), mnist["target"]
 X.shape
 print(type(X))
-print(X.iloc[2])
+print(X[2])
 #plot using imshow
-some_digit = X.iloc[2]
-some_digit_image = np.array(some_digit).reshape(28, 28)
+some_digit = X[2]
+some_digit_image = some_digit.reshape(28, 28)
 plt.imshow(some_digit_image, cmap=mpl.cm.binary)
 plt.axis("off")
 plt.show()
@@ -33,7 +33,7 @@ print(y[2])
 print(y_multi_label[2])
 ###
 #Let us try a K nearest neighbor model using multi label
-some_digit = X.iloc[0]
+some_digit = X[0]
 print(y_multi_label[0])
 from sklearn.neighbors import KNeighborsClassifier
 knn_clf = KNeighborsClassifier()

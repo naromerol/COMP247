@@ -11,7 +11,7 @@ from sklearn.model_selection import cross_val_score
 from sklearn.datasets import fetch_openml
 mnist = fetch_openml('mnist_784', version=1)
 mnist.keys()
-X, y = mnist["data"], mnist["target"]
+X, y = mnist["data"].to_numpy(), mnist["target"]
 X.shape
 print(type(X))
 #plot using imshow
