@@ -8,6 +8,7 @@ from sklearn.datasets import load_iris
 from sklearn.tree import DecisionTreeClassifier
 from sklearn import tree
 import numpy as np
+import os
 from matplotlib import pyplot as plt
 
 
@@ -16,7 +17,7 @@ X = iris.data[:, 2:] # petal length and width
 y = iris.target
 #Notice target is discrete  with three values
 print (np.unique(y))
-#Notice input is contnious
+#Notice input is continous
 print ('min',np.min(X[:,1]),'max',np.max(X[:,1]))
 print ('min',np.min(X[:,0]),'max',np.max(X[:,0]))
 # Build the classifier
@@ -32,7 +33,10 @@ fig = plt.figure(figsize=(25,20))
 #                      class_names=iris.target_names, filled ='True'  ) 
 _ = tree.plot_tree(tree_clf,feature_names=iris.feature_names[2:],  
                       class_names=iris.target_names, filled ='True'  )
-fig.savefig("C:/Users/mhabayeb/Documents/COMP247_data/decistion_tree.png")
+
+current_folder = os.getcwd();
+figure_path = os.path.join(current_folder, 'decision_tree.png')
+fig.savefig(figure_path)
 
 #Plot using graphviz
 import graphviz 
@@ -43,12 +47,12 @@ dot_data = tree.export_graphviz(tree_clf, out_file=None,
                       filled=True, rounded=True,  
                       special_characters=True) 
 graph = graphviz.Source(dot_data) 
-graph.render("iris")
+#graph.render("iris")
 graph 
 
 
 
-#Descision boundries
+#Decision boundaries
 from matplotlib.colors import ListedColormap
 from matplotlib import pyplot as plt
 

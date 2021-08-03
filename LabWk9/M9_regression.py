@@ -11,7 +11,8 @@ from sklearn.tree import DecisionTreeRegressor
 from sklearn.model_selection import KFold
 from sklearn.model_selection import cross_val_score
 import numpy as np
-path = "C:/Users/mhabayeb/Documents/courses_cen/COMP309 new/data/"
+
+path = os.getcwd()
 filename = 'boston.csv'
 fullpath = os.path.join(path,filename)
 #load

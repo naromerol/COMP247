@@ -16,7 +16,7 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import cross_val_score
 import os
 #Load the data
-path = 'C:/Users/mhabayeb/Documents/COMP247_data/'
+path = os.getcwd()
 filename = 'pima-indians-diabetes.csv'
 fullpath = os.path.join(path,filename)
 col_names = ['pregnant', 'glucose', 'bp', 'skin', 'insulin', 'bmi', 'pedigree', 'age', 'label']
