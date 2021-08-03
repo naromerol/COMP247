@@ -11,7 +11,7 @@ import seaborn as sn
 project_folder = os.getcwd();
 project_data = 'Bicycle_Thefts.csv'
 #print(os.path.join(project_folder, project_data))
-bike_ds = pd.read_csv(os.path.join(project_folder, project_data),sep=',')
+bike_ds = pd.read_csv(os.path.join(project_folder, project_data))
 
 bike_ds.shape
 bike_ds.head()
